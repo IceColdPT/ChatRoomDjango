@@ -21,7 +21,7 @@ class CHAT_MESSAGE(models.Model):
     """chat Message"""
 
     messageText = models.CharField(max_length=512)
-    author = models.ForeignKey(USER, models.CASCADE)
+    author = models.CharField(max_length=25, default="Anonymous")
 
     class Meta:
         """Meta definition for chatMessage."""
@@ -30,11 +30,8 @@ class CHAT_MESSAGE(models.Model):
         verbose_name_plural = 'chatMessages'
 
     def __str__(self):
-        """Unicode representation of chatMessage."""
-        pass
+    
+        return self.messageText
 
-    def save(self):
-        """Save method for chatMessage."""
-        pass
 
 
